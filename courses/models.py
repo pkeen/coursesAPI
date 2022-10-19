@@ -33,13 +33,17 @@ class Course(models.Model):
 class Lesson(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     # I am considering many-to-many here for multiple lessons being able to be used in multiple courses...
-    title = models.CharField(max_length=255)
-    description = models.TextField()
+    title = models.CharField(max_length=255, unique=True)
+    description = models.TextField(blank=True)
+    text = models.TextField(blank=True)
     # needs a video fieldtype here - perhaps this should just be a link for now??? Or actually server hosted video??
     # video_link = 
 
     def __str__(self) -> str:
         return self.title
+
+    class Meta:
+        ordering = ['title']
 
     
 
