@@ -26,6 +26,7 @@ class Course(models.Model):
     def __str__(self) -> str:
         return self.title
     
+    
     class Meta:
         ordering = ['title']
 
@@ -42,6 +43,9 @@ class Lesson(models.Model):
     def __str__(self) -> str:
         return self.title
 
+    # For Lesssons will appear on course page in alphabetical order: 
+    # I would love to create some kind of drag and drop re-ordering
+    # But for now, simply name each lesson with a number 1. 2. etc... (Effective enough)
     class Meta:
         ordering = ['title']
 
