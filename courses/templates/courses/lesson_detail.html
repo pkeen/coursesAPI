@@ -8,7 +8,7 @@
     <title>{{lesson.title}}</title>
 </head>
 <body>
-    <h3><a href="/courses/{{lesson.course.slug}}">Back to {{lesson.course.title}}</a></h3>
+    <h3><a href="{% url 'course_detail' lesson.course.slug %}">Back to {{lesson.course.title}}</a></h3>
     <h1>{{ lesson.title }}</h1>
     <h3> {{lesson.description}}</h3>
     <p> {{lesson.text}}</p>

@@ -11,7 +11,7 @@
     {% for course in courses %}
     <ul>
         <li>
-            <a href="/courses/{{course.slug}}/">{{course}}</a>
+            <a href="{% url 'course_detail' course.slug %}">{{course}}</a>
         </li>
     </ul>
     {% endfor%}

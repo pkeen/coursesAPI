@@ -14,7 +14,7 @@
     {% for lesson in lessons %}
     <ul>
         <li>
-            <a href="/courses/{{course.slug}}/{{lesson.slug}}">{{lesson.title}}</a>
+            <a href="{% url 'lesson_detail' course.slug lesson.slug %}">{{lesson.title}}</a>
         </li>
     </ul>
     {% endfor %}
