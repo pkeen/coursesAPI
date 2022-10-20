@@ -10,7 +10,7 @@ from django.urls import reverse
 # For Course Change Page
 class LessonInLine(admin.TabularInline):
     model = Lesson
-    fields = ['title', 'edit_lesson']
+    fields = ['title', 'edit_lesson', 'slug']
    # show_change_link: True // NOT WORKING
    
     # for link to full lesson change page
@@ -20,6 +20,7 @@ class LessonInLine(admin.TabularInline):
     
     readonly_fields = ['edit_lesson']
     extra = 0
+    prepopulated_fields = {'slug': ('title', )}
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
