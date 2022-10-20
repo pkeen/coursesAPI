@@ -26,6 +26,7 @@ class CourseAdmin(admin.ModelAdmin):
 
     # Change Page
     inlines = [LessonInLine]
+    prepopulated_fields = { 'slug': ('title', ) }
 
     
     # Code for changelist page
@@ -53,6 +54,11 @@ class CourseAdmin(admin.ModelAdmin):
 
 @admin.register(Lesson)
 class LessonAdmin(admin.ModelAdmin):
+
+    # Change Page
+    prepopulated_fields = { 'slug': ('title', ) }
+
+    # Change List Page
     list_display =[
         'title', 
         'course_link',

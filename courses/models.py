@@ -23,6 +23,8 @@ class Course(models.Model):
         default=STATUS_DRAFT
         )
 
+    slug = models.SlugField()
+
     def __str__(self) -> str:
         return self.title
     
@@ -39,6 +41,8 @@ class Lesson(models.Model):
     text = models.TextField(blank=True)
     # needs a video fieldtype here - perhaps this should just be a link for now??? Or actually server hosted video??
     # video_link = 
+
+    slug = models.SlugField()
 
     def __str__(self) -> str:
         return self.title
