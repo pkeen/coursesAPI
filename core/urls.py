@@ -16,9 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from courses import views
+import debug_toolbar
+
 
 urlpatterns = [
+    path('__debug__/', include('debug_toolbar.urls')),
     path('admin/', admin.site.urls),
     path('hello/', views.hello),
-    path('courses/', include('courses.urls'))
+    path('courses/', include('courses.urls')),
+    
 ]
+
+
+    
+'''
+urlpatterns += [
+    url(r'^__debug__/', include(debug_toolbar.urls)),
+]
+'''
